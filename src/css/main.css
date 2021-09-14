@@ -1,5 +1,5 @@
 /*   IMPORTAÇÃO DA FONTE*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
   --primary-color: #3ec6e0;
@@ -22,6 +22,30 @@ body {
 
 ul {
   list-style: none;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+input {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+  width: 60px;
+}
+::-webkit-input-placeholder {
+  color: white;
+  font-size: 15px;
 }
 
 /* Utilities classes -- will be used more than once */
@@ -62,10 +86,12 @@ ul {
 
 .banner-2 {
   display: none;
+  background: url("/src/img/banner-02.jpg") no-repeat center center/cover;
 }
 
 .nav-container {
   width: 100%;
+  height: 10%;
   justify-content: center;
 }
 .dropdown {
@@ -74,10 +100,13 @@ ul {
 .dropdown-menu {
   display: none;
   position: absolute;
-  width: 500px;
+  margin-top: 5px;
+  width: 550px;
   height: 250px;
+  top: 35px;
+  left: -35px;
   padding: 20px 30px 30px 35px;
-  border: 3px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   box-shadow: 10px 10px var(--primary-color);
   background: var(--secondary-color);
@@ -85,30 +114,45 @@ ul {
   z-index: 10;
 }
 
+.dropdown-menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -14px;
+  left: 33px;
+  width: 0;
+  height: 50;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid var(--primary-color);
+}
+
 .dropdown:hover .dropdown-menu {
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
+  animation: show-up 0.3s forwards;
 }
 
 .dropdown-menu ul li {
-  margin: 5px 10px 20px;
+  margin: 5px 10px 7px;
   padding: 5px 10px;
+  border-radius: 5px;
   width: 100%;
+  transition: 0.3s;
 }
 
 .dropdown-menu ul li:not(:first-child):hover {
   background: var(--primary-color);
-  border-radius: 5px;
 }
 
 .menu {
   width: 100%;
-  max-width: 960px;
-  height: 80px;
+  max-width: 1200px;
+  margin-top: 25px;
+  height: 35px;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
+  font-weight: 500;
 }
 .menu ul li {
   margin-right: 35px;
@@ -144,4 +188,225 @@ ul {
   height: 23px;
   border-radius: 50%;
   font-weight: 900;
+}
+
+.banner-container {
+  position: relative;
+  text-align: end;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.banner-info {
+  width: 450px;
+  padding: 10px;
+  position: absolute;
+  top: 8%;
+  right: 25%;
+  animation: appear 2s forwards;
+}
+
+.banner-nav {
+  position: absolute;
+  width: 63px;
+  height: 384px;
+  top: 10%;
+  background: #3ec6e0;
+  border-radius: 0px 0px 0px 10px;
+}
+
+.banner-name {
+  font-size: 2.875rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.banner-price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 4.375rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.banner-price sup {
+  font-size: 1.75rem;
+}
+
+.banner-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.nav-name {
+  display: flex;
+  position: relative;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 80%;
+}
+
+.nav-name:after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 0;
+  top: 215px;
+  left: -7px;
+  border: 1px solid #fff;
+  background: #fff;
+  transform: rotate(90deg);
+}
+
+.nav-name p {
+  padding: 23px 23px;
+}
+
+.nav-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20%;
+  border-radius: 0px 0px 0px 10px;
+  background: var(--secondary-color);
+}
+
+.nav-index {
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 0.875rem;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.highlights {
+  display: flex;
+  color: #000;
+  position: absolute;
+  top: 68%;
+  justify-content: center;
+  width: 100%;
+  animation: show-banner-up 0.7s ease-in forwards;
+}
+
+.zelda {
+  margin-right: 20px;
+}
+
+.zelda-name,
+.sekiro-name {
+  height: 60px;
+  width: 588px;
+  position: absolute;
+  top: 98%;
+  display: flex;
+  background: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  border-radius: 0 0 10px 10px;
+}
+
+.zelda-name p,
+.sekiro-name p {
+  margin-left: 20px;
+  align-self: center;
+}
+
+.sekiro-name span,
+.zelda-name span {
+  width: 10px;
+  background: var(--secondary-color);
+  border-radius: 0 0 0 10px;
+}
+
+.zelda-name:after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  left: 59%;
+  top: 48%;
+  border: 1px solid var(--secondary-color);
+}
+
+.sekiro-name:after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  left: 59%;
+  top: 48%;
+  border: 1px solid var(--secondary-color);
+}
+
+.teste {
+  height: 1000px;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30%;
+  height: 50px;
+  padding-right: 45px;
+  background: var(--secondary-color);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 70%;
+  height: 50px;
+  background: var(--primary-color);
+  padding-left: 35px;
+}
+
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes appear {
+  from {
+    right: 20%;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 25%;
+  }
+}
+
+@keyframes show-banner-up {
+  from {
+    opacity: 0;
+    top: 70%;
+  }
+  to {
+    opacity: 1;
+    top: 68%;
+  }
 }
