@@ -4,7 +4,7 @@
 :root {
   --primary-color: #3ec6e0;
   --secondary-color: #084154;
-  --light-gray: #ebebeb;
+  --light-gray: #f5f5f5;
 }
 
 * {
@@ -131,6 +131,10 @@ input {
   display: flex;
   justify-content: space-evenly;
   animation: show-up 0.3s forwards;
+}
+
+.dropdown-menu ul {
+  margin-right: 5px;
 }
 
 .dropdown-menu ul li {
@@ -287,8 +291,9 @@ input {
   width: 100%;
 }
 
-.highlights {
+.middle-banners {
   display: flex;
+  flex-shrink: 1;
   color: #000;
   position: absolute;
   top: 68%;
@@ -346,11 +351,103 @@ input {
   border: 1px solid var(--secondary-color);
 }
 
-.teste {
-  height: 1000px;
+.highlights {
+  color: #000;
+  position: absolute;
+  width: 100%;
+  top: 130%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.highlights h2 {
+  width: 100%;
+  font-size: 2.25rem;
+  font-weight: 300;
+  max-width: 1200px;
+  color: var(--secondary-color);
+  margin-left: 25px;
+}
+
+.highlight-products {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 50px;
+}
+
+.product {
+  width: 350px;
+  height: 600px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 20px 7px rgba(0, 0, 0, 0.07);
+}
+
+.product-banner {
+  width: 300px;
+  height: 70%;
+  padding: 20px 0;
+}
+
+.buy-product {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-top: 3px solid var(--primary-color);
+  background-color: var(--light-gray);
+}
+
+.product-name {
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.product-price {
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: var(--secondary-color);
+  margin-bottom: 25px;
+}
+
+.buy {
+  justify-self: center;
+  align-self: center;
+  width: 240px;
+  height: 50px;
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 10px 30px;
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+
+.bought {
+  background: var(--secondary-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.bought:after {
+  content: url("/src/img/mario.png");
+  position: absolute;
+  right: 0;
+  bottom: -9%;
+  transition: 1s ease;
 }
 
 .footer {
+  position: absolute;
+  top: 220%;
   width: 100%;
   height: 50px;
   display: flex;
