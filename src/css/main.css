@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 body {
@@ -73,7 +74,7 @@ input {
 
 /* end of utilities classes */
 
-.banner-1,
+/* .banner-1,
 .banner-2 {
   position: absolute;
   width: 100%;
@@ -87,11 +88,12 @@ input {
 .banner-2 {
   display: none;
   background: url("/src/img/banner-02.jpg") no-repeat center center/cover;
-}
+} */
 
 .nav-container {
   width: 100%;
   height: 10%;
+  position: relative;
   justify-content: center;
 }
 .dropdown {
@@ -196,21 +198,33 @@ input {
 
 .banner-container {
   position: relative;
-  text-align: end;
   width: 100%;
   height: 90%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  z-index: -100;
+}
+.banners {
+  position: absolute;
+  width: 100%;
+  z-index: -10;
 }
 
+.banners img {
+  width: 100%;
+}
 .banner-info {
   width: 450px;
   padding: 10px;
   position: absolute;
   top: 8%;
   right: 25%;
-  animation: appear 2s forwards;
+  animation: appear 1s forwards;
+  display: none;
+}
+.banner-info.active {
+  display: block;
 }
 
 .banner-nav {
@@ -220,12 +234,14 @@ input {
   top: 10%;
   background: #3ec6e0;
   border-radius: 0px 0px 0px 10px;
+  z-index: 1000;
 }
 
 .banner-name {
   font-size: 2.875rem;
   font-weight: 900;
   margin-bottom: 15px;
+  text-align: end;
 }
 
 .banner-price {
@@ -244,6 +260,7 @@ input {
 
 .banner-description {
   font-size: 1rem;
+  text-align: end;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -289,6 +306,11 @@ input {
   font-size: 0.875rem;
   margin-top: 10px;
   width: 100%;
+}
+
+.nav-previous,
+.nav-next {
+  cursor: pointer;
 }
 
 .middle-banners {
@@ -483,7 +505,7 @@ input {
   top: 0;
   left: 0;
   z-index: 2000;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -495,6 +517,7 @@ input {
 .modal {
   background: #fff;
   width: 400px;
+  height: 489px;
   padding: 20px 20px 0 20px;
   color: var(--secondary-color);
   border-radius: 5px;
@@ -506,17 +529,17 @@ input {
 }
 
 .close {
-  background: #f55959;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  color: #fff;
+  /* background: #f55959; */
+  width: 50px;
+  height: 50px;
+  /* border-radius: 50%;
+  color: #fff; */
   align-self: flex-end;
 }
 
 .modal-success {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 25px;
   width: 250px;
   font-size: 1.875rem;
   font-weight: 300;
@@ -541,10 +564,6 @@ input {
   background: var(--secondary-color);
   top: 24%;
   right: 0;
-}
-.modal-bg img {
-  margin: 0;
-  padding: 0;
 }
 
 @keyframes show-up {
