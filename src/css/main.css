@@ -475,6 +475,78 @@ input {
   padding-left: 35px;
 }
 
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  background: rgba(8, 65, 84, 0.62);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.active {
+  display: flex;
+}
+
+.modal {
+  background: #fff;
+  width: 400px;
+  padding: 20px 20px 0 20px;
+  color: var(--secondary-color);
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.close {
+  background: #f55959;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.modal-success {
+  text-align: center;
+  margin-top: 40px;
+  width: 250px;
+  font-size: 1.875rem;
+  font-weight: 300;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.modal::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 1px;
+  background: var(--secondary-color);
+  top: 24%;
+  left: 0;
+}
+.modal::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 1px;
+  background: var(--secondary-color);
+  top: 24%;
+  right: 0;
+}
+.modal-bg img {
+  margin: 0;
+  padding: 0;
+}
+
 @keyframes show-up {
   from {
     opacity: 0;
