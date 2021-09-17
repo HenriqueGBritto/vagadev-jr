@@ -289,7 +289,7 @@ input {
   width: 63px;
   height: 384px;
   top: 10%;
-  background: #3ec6e0;
+  background: var(--primary-color);
   border-radius: 0px 0px 0px 10px;
   z-index: 1000;
 }
@@ -335,16 +335,17 @@ input {
 .nav-name:after {
   position: absolute;
   content: "";
-  width: 80px;
+  width: 160px;
   height: 0;
-  top: 215px;
-  left: -7px;
+  top: 65%;
+  left: -76%;
   border: 1px solid #fff;
   background: #fff;
   transform: rotate(90deg);
 }
 
 .nav-name p {
+  background: var(--primary-color);
   padding: 23px 23px;
 }
 

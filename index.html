@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="nav-container flex">
+        <section class="nav-container flex">
             <nav class="menu flex">
                 <ul class="left flex">
                     <li class="dropdown">
@@ -54,7 +54,7 @@
                     </li>
                     <li class="flex">
                         <img class="filter-light-gray" src="./src/svgs/search-solid.svg" alt="">
-                        <input type="text" placeholder="BUSCAR">
+                        <input id="buscar" type="text" placeholder="BUSCAR">
                         <span class="divider">|</span>
                     </li>
                     <li class="flex">
@@ -63,11 +63,11 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-        <div class="banner-container">
+        </section>
+        <section class="banner-container">
             <div class="banners">
-                <div class="banner-1"><img src="/src/img/banner-01.jpg" alt=""></div>
-                <div class="banner-2"><img src="/src/img/banner-02.jpg" alt=""></div>
+                <div ><img class="banner-1" src="/src/img/banner-01.jpg" alt=""></div>
+                <div ><img class="banner-2" src="/src/img/banner-02.jpg" alt=""></div>
             </div>
             <div class="banner-info active">
                 <p class="banner-name">MORTAL KOMBAT X</p>
@@ -77,7 +77,7 @@
             <div class="banner-info">
                 <p class="banner-name">RED DEAD REDEMPTION 2</p>
                 <p class="banner-price">R$ 299<sup>,99</sup></P>
-                <p class="banner-description"> Estados Unidos, 1899. Arthur Morgan e a gangue Van der Linde são forçados a fugir. Com agentes federais e os melhores caçadores de recompensas no seu encalço, a gangue precisa roubar, assaltar e lutar para sobreviver no impiedoso coração dos Estados Unidos. Conforme divisões internas profundas ameaçam despedaçar a gangue, Arthur deve fazer uma escolha entre os seus próprios ideais e a lealdade à gangue que o criou.</p>
+                <p class="banner-description"> Estados Unidos, 1899. Arthur Morgan e a gangue Van der Linde são forçados a fugir. Com agentes federais e os melhores caçadores de recompensas no seu encalço, a gangue precisa roubar, assaltar e lutar para sobreviver no impiedoso coração dos Estados Unidos.</p>
             </div>
             <div class="banner-nav">
                 <div class="nav-name">
@@ -89,9 +89,9 @@
                     <div class="nav-next"><img src="./src/svgs/angle-right-solid.svg" alt=""></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="middle-banners">
+        <section class="middle-banners">
             <div class="zelda">
                 <div class="zelda-banner"><img src="./src/img/zelda_banner.jpg" alt=""></div>
                 <div class="zelda-name"><span class="z-blue-bar"></span><p class="z-name">The Legend of Zelda - Breath of the wild</p></div>
@@ -100,9 +100,9 @@
                 <div class="sekiro-banner"><img src="./src/img/sekiro_banner.jpg" alt=""></div>
                 <div class="sekiro-name"><span class="s-blue-bar"></span><p class="s-name">SEKIRO - Shadows die twice</p></div>
             </div>
-        </div>
+        </section>
 
-        <div class="highlights">
+        <section class="highlights">
             <img src="./src/svgs/highlight.svg" alt="">
             <h2>Produtos em destaque</h2>
             <div class="highlight-products">
@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
     </div>
     <footer class="footer">
@@ -150,6 +150,7 @@
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <script src="./src/js/mobile.js"></script>
     <script src="./src/js/script.js"> </script>
 </body>
 </html>

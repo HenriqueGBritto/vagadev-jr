@@ -9,11 +9,6 @@ const bannerProps = [
     {game: 'RED DEAD 2'}
  ]
 
- const highlightProps = [
-    {game: 'OUTRIDERS'},
-    {game: 'CYBERPUNK 2077'},
-    {game: 'DONKEY KONG'}
- ]
 
 //função para adicionar classe de 'comprado' no botão
 
