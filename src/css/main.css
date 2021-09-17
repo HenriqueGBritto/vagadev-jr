@@ -93,14 +93,17 @@ input {
 .nav-container {
   width: 100%;
   height: 10%;
-  position: relative;
+  position: absolute;
   justify-content: center;
 }
 .dropdown {
   position: relative;
+  margin-right: 35px;
 }
 .dropdown-menu {
   display: none;
+  justify-content: space-evenly;
+  /* animation: show-up 0.3s forwards; */
   position: absolute;
   margin-top: 5px;
   width: 550px;
@@ -129,12 +132,6 @@ input {
   border-bottom: 12px solid var(--primary-color);
 }
 
-.dropdown:hover .dropdown-menu {
-  display: flex;
-  justify-content: space-evenly;
-  animation: show-up 0.3s forwards;
-}
-
 .dropdown-menu ul {
   margin-right: 5px;
 }
@@ -161,7 +158,6 @@ input {
   font-weight: 500;
 }
 .menu ul li {
-  margin-right: 35px;
   cursor: pointer;
 }
 
@@ -173,6 +169,7 @@ input {
 
 .right li {
   align-items: center;
+  margin-right: 35px;
   justify-content: space-between;
 }
 .right li img {
@@ -183,6 +180,66 @@ input {
   font-size: 2rem;
   font-weight: lighter;
   margin-left: 30px;
+}
+
+.contact {
+  position: relative;
+}
+
+.contact-dropdown {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 190%;
+  left: -150%;
+  width: 250px;
+  height: 250px;
+  background: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 10px 10px var(--primary-color);
+}
+
+.contact-dropdown::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -14px;
+  left: 46%;
+  width: 0;
+  height: 50;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid var(--primary-color);
+}
+
+.contact-dropdown li {
+  display: flex;
+  width: 90%;
+  font-size: 0.9rem;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  margin: 0 100px;
+}
+
+.contact-dropdown li:not(:first-child):hover {
+  border-radius: 5px;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+}
+
+.contact-dropdown li img {
+  width: 30px;
+  height: 30px;
+}
+
+.contact-dropdown li.title {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .bag-items {
@@ -218,9 +275,9 @@ input {
   width: 450px;
   padding: 10px;
   position: absolute;
-  top: 8%;
+  top: 18%;
   right: 25%;
-  animation: appear 1s forwards;
+  animation: appear 0.5s forwards;
   display: none;
 }
 .banner-info.active {
@@ -242,6 +299,7 @@ input {
   font-weight: 900;
   margin-bottom: 15px;
   text-align: end;
+  cursor: pointer;
 }
 
 .banner-price {
@@ -315,7 +373,6 @@ input {
 
 .middle-banners {
   display: flex;
-  flex-shrink: 1;
   color: #000;
   position: absolute;
   top: 68%;
@@ -324,8 +381,19 @@ input {
   animation: show-banner-up 0.7s ease-in forwards;
 }
 
+.zelda,
+.sekiro {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.zelda:hover,
+.sekiro:hover {
+  transform: scale(1.1);
+}
+
 .zelda {
-  margin-right: 20px;
+  margin-right: 35px;
 }
 
 .zelda-name,
@@ -342,17 +410,22 @@ input {
   border-radius: 0 0 10px 10px;
 }
 
-.zelda-name p,
-.sekiro-name p {
+.z-name,
+.s-name {
   margin-left: 20px;
   align-self: center;
 }
 
-.sekiro-name span,
-.zelda-name span {
+.s-blue-bar,
+.z-blue-bar {
   width: 10px;
   background: var(--secondary-color);
   border-radius: 0 0 0 10px;
+  color: #fff;
+  text-align: start;
+  padding: 15px 0;
+  font-size: 1.5rem;
+  /* animation: fill-right 1s forwards; */
 }
 
 .zelda-name:after {
@@ -404,6 +477,7 @@ input {
 .product {
   width: 350px;
   height: 600px;
+  cursor: pointer;
   border-radius: 5px;
   box-shadow: 0px 4px 20px 7px rgba(0, 0, 0, 0.07);
 }
@@ -412,6 +486,11 @@ input {
   width: 300px;
   height: 70%;
   padding: 20px 0;
+}
+
+.product:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
 }
 
 .buy-product {
@@ -510,9 +589,13 @@ input {
   align-items: center;
 }
 
-.modal-container.active {
-  display: flex;
+.active {
+  display: block;
 }
+
+/* .modal-container.active {
+  display: flex;
+} */
 
 .modal {
   background: #fff;
@@ -522,18 +605,16 @@ input {
   color: var(--secondary-color);
   border-radius: 5px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .close {
-  /* background: #f55959; */
   width: 50px;
   height: 50px;
-  /* border-radius: 50%;
-  color: #fff; */
+  position: absolute;
+  right: 5%;
   align-self: flex-end;
 }
 
@@ -543,8 +624,16 @@ input {
   width: 250px;
   font-size: 1.875rem;
   font-weight: 300;
-  position: relative;
+  position: absolute;
+  top: 14%;
+  left: 19%;
   margin-bottom: 50px;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 43%;
+  left: 20%;
 }
 
 .modal::before {
@@ -596,5 +685,44 @@ input {
   to {
     opacity: 1;
     top: 68%;
+  }
+}
+
+@keyframes move-up {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fill-right {
+  0% {
+    width: 10px;
+    text-align: end;
+  }
+  100% {
+    width: 100%;
+    text-align: end;
+    padding-right: 30px;
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@keyframes fill-return {
+  0% {
+    width: 100%;
+    text-align: end;
+    padding-right: 30px;
+  }
+  100% {
+    width: 10px;
+    text-align: end;
   }
 }
