@@ -34,13 +34,6 @@ $(()=>{
     
     $('.banners').on('afterChange', (event, slick, currentSlide)=>{
         $('.banner-info').toggleClass('active')
-        // $('.nav-game-name').text(currentSlide)
-        // if(currentSlide == 0){
-        //     $('.nav-game-name').text(bannerProps[0].game)
-        // } else {
-        //     $('.nav-game-name').text(bannerProps[1].game)
-        // }
-
         currentSlide == 0 ? $('.nav-game-name').text(bannerProps[0].game) : $('.nav-game-name').text(bannerProps[1].game)
         $(".nav-num").text(currentSlide + 1)
     })
@@ -74,7 +67,7 @@ $('.dropdown').on('mouseleave', ()=>{
 
 $('.zelda').on('mouseover', ()=>{
     $('.z-name').css('display', 'none')
-    $('.z-blue-bar').css('animation', 'fill-right .5s forwards').text('COMPRAR')
+    $('.z-blue-bar').css('animation', 'fill-right .5s forwards').text('COMPRAR +')
 })
 $('.zelda').on('mouseleave', ()=>{
     $('.z-name').css('display', '')
@@ -82,7 +75,7 @@ $('.zelda').on('mouseleave', ()=>{
 })
 $('.sekiro').on('mouseover', ()=>{
     $('.s-name').css('display', 'none')
-    $('.s-blue-bar').css('animation', 'fill-right .5s forwards').text('COMPRAR')
+    $('.s-blue-bar').css('animation', 'fill-right .5s forwards').text('COMPRAR +')
 })
 $('.sekiro').on('mouseleave', ()=>{
     $('.s-name').css('display', '')
@@ -95,3 +88,16 @@ $('.contact').parent().on('mouseover', ()=>{
 $('.contact').parent().on('mouseleave', ()=>{
     $('.contact-dropdown').fadeOut(150)
 })
+
+// add class afterScroll
+
+$(function() {
+    $(window).on("scroll", function() {
+        if($(window).scrollTop() > 400) {
+            $(".nav-container").addClass("afterScroll");
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+           $(".nav-container").removeClass("afterScroll");
+        }
+    });
+});

@@ -74,36 +74,26 @@ input {
 
 /* end of utilities classes */
 
-/* .banner-1,
-.banner-2 {
-  position: absolute;
-  width: 100%;
-  height: 80vh;
-  top: 0;
-  left: 0;
-  background: url("/src/img/banner-01.jpg") no-repeat center center/cover;
-  z-index: -1;
-}
-
-.banner-2 {
-  display: none;
-  background: url("/src/img/banner-02.jpg") no-repeat center center/cover;
-} */
-
 .nav-container {
   width: 100%;
   height: 10%;
-  position: absolute;
+  position: fixed;
   justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 100000;
+}
+
+.nav-container.afterScroll {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .dropdown {
   position: relative;
   margin-right: 35px;
 }
+
 .dropdown-menu {
   display: none;
   justify-content: space-evenly;
-  /* animation: show-up 0.3s forwards; */
   position: absolute;
   margin-top: 5px;
   width: 550px;
@@ -118,7 +108,9 @@ input {
   font-weight: 400;
   z-index: 10;
 }
-
+.logo {
+  z-index: 1000;
+}
 .dropdown-menu::before {
   content: "";
   display: block;
@@ -457,6 +449,7 @@ input {
   justify-content: center;
   align-items: center;
 }
+
 .highlights h2 {
   width: 100%;
   font-size: 2.25rem;
