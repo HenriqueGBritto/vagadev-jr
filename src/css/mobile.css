@@ -4,6 +4,8 @@
   --light-gray: #f5f5f5;
 }
 
+/* Navbar */
+
 .menu {
   max-width: 500px;
   height: 30px;
@@ -25,11 +27,44 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+/* mobile menu */
 
-.banners img {
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  margin-top: 0;
+  top: 9%;
+  left: 0;
+  border: none;
+  border-radius: 0;
   height: 100%;
   width: 100%;
 }
+
+.dropdown-menu::before {
+  display: none;
+}
+
+.dropdown-menu ul:not(:last-child) {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu li:not(:first-child) {
+  font-size: 1.125rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+/* Fim da estilização do menu mobile */
+
+/* Fim da estilização da section navbar */
+
+/* estilização slider */
 
 .banner-name {
   font-size: 1.625rem;
@@ -110,6 +145,9 @@
   width: 50%;
 }
 
+/* fim da estilização do slider */
+
+/* Estilização da section middle-banners */
 .middle-banners {
   flex-wrap: wrap;
   align-items: center;
@@ -176,7 +214,9 @@
   font-size: 0.875rem;
   padding: 8px 0;
 }
+/* fim da estilização da section middle banners */
 
+/* estilização da section highlights */
 .highlights {
   top: 150%;
 }
@@ -227,40 +267,7 @@
   font-size: 1.2;
 }
 
+/* ajuste na posição do footer */
 .footer {
   top: 245%;
-}
-
-/* mobile menu */
-
-.dropdown-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: fixed;
-  margin-top: 0;
-  top: 9%;
-  left: 0;
-  border: none;
-  border-radius: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.dropdown-menu::before {
-  display: none;
-}
-
-.dropdown-menu ul:not(:last-child) {
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.dropdown-menu li:not(:first-child) {
-  font-size: 1.125rem;
-}
-
-.title {
-  font-size: 1.5rem;
-  font-weight: 900;
 }

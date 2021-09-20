@@ -1,0 +1,129 @@
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  z-index: -100;
+}
+.banners {
+  position: absolute;
+  width: 100%;
+  z-index: -10;
+}
+
+.banners img {
+  width: 100%;
+}
+.banner-info {
+  width: 450px;
+  padding: 10px;
+  position: absolute;
+  top: 18%;
+  right: 25%;
+  animation: appear 0.5s forwards;
+  display: none;
+}
+.banner-info.active {
+  display: block;
+}
+
+.banner-nav {
+  position: absolute;
+  width: 63px;
+  height: 384px;
+  top: 10%;
+  background: var(--primary-color);
+  border-radius: 0px 0px 0px 10px;
+  z-index: 1000;
+}
+
+.banner-name {
+  font-size: 2.875rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-align: end;
+  cursor: pointer;
+}
+
+.banner-price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 4.375rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.banner-price sup {
+  font-size: 1.75rem;
+}
+
+.banner-description {
+  font-size: 1rem;
+  text-align: end;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.nav-name {
+  display: flex;
+  position: relative;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 80%;
+}
+
+.nav-name:after {
+  position: absolute;
+  content: "";
+  width: 160px;
+  height: 0;
+  top: 65%;
+  left: -76%;
+  border: 1px solid #fff;
+  background: #fff;
+  transform: rotate(90deg);
+}
+
+.nav-name p {
+  background: var(--primary-color);
+  padding: 23px 23px;
+}
+
+.nav-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20%;
+  border-radius: 0px 0px 0px 10px;
+  background: var(--secondary-color);
+}
+
+.nav-index {
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 0.875rem;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.nav-previous,
+.nav-next {
+  cursor: pointer;
+}
+
+@keyframes appear {
+  from {
+    right: 20%;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 25%;
+  }
+}

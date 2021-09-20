@@ -1,5 +1,11 @@
 @import url("./normalize.css");
 @import url("./main.css");
+@import url("./navbar.css");
+@import url("./dropdowns.css");
+@import url("./banner.css");
+@import url("./middle-banners.css");
+@import url("./highlights.css");
+@import url("./modal.css");
 @import url("./mobile.css") (max-width: 500px);
 @import url("./slick.css");
 @import url("./slick-theme.css");

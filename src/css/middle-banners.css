@@ -1,0 +1,107 @@
+.middle-banners {
+  display: flex;
+  color: #000;
+  position: absolute;
+  top: 68%;
+  justify-content: center;
+  width: 100%;
+  animation: show-banner-up 0.7s ease-in forwards;
+}
+
+.zelda,
+.sekiro {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.zelda:hover,
+.sekiro:hover {
+  transform: scale(1.06);
+}
+
+.zelda {
+  margin-right: 35px;
+}
+
+.zelda-name,
+.sekiro-name {
+  height: 60px;
+  width: 588px;
+  position: absolute;
+  top: 98%;
+  display: flex;
+  background: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  border-radius: 0 0 10px 10px;
+}
+
+.z-name,
+.s-name {
+  margin-left: 20px;
+  align-self: center;
+}
+
+.s-blue-bar,
+.z-blue-bar {
+  width: 10px;
+  background: var(--secondary-color);
+  border-radius: 0 0 0 10px;
+  color: #fff;
+  text-align: start;
+  padding: 15px 0;
+  font-size: 1.5rem;
+  /* animation: fill-right 1s forwards; */
+}
+
+.zelda-name:after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  left: 59%;
+  top: 48%;
+  border: 1px solid var(--secondary-color);
+}
+
+.sekiro-name:after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  left: 59%;
+  top: 48%;
+  border: 1px solid var(--secondary-color);
+}
+@keyframes show-banner-up {
+  from {
+    opacity: 0;
+    top: 70%;
+  }
+  to {
+    opacity: 1;
+    top: 68%;
+  }
+}
+@keyframes fill-right {
+  0% {
+    width: 10px;
+    text-align: end;
+  }
+  100% {
+    width: 100%;
+    text-align: end;
+    padding-right: 30px;
+    border-radius: 0 0 10px 10px;
+  }
+}
+@keyframes fill-return {
+  0% {
+    width: 100%;
+    text-align: end;
+    padding-right: 30px;
+  }
+  100% {
+    width: 10px;
+    text-align: end;
+  }
+}

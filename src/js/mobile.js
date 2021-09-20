@@ -1,11 +1,13 @@
-
+// Faz a verificação se a width for menor ou igual a 500px, em caso de verdadeira, executa o código.
 if($(window).width() <=500){
+    // oculta o texto de 'contato' e remove o placeholder do input do campo de busca
 function hideItems(){
     $('.contact').text('')
     $('#buscar').removeAttr('placeholder').css('width', '5px')
 }
 
 function changeSlickImg(){
+    //troca a src das imagens do slick
     $('.banner-1').attr('src', '/src/img/banner-mobile-01.jpg')
     $('.banner-2').attr('src', '/src/img/banner-mobile-02.jpg')
 }
@@ -20,8 +22,9 @@ $('.highlight-products').slick({
     nextArrow: 0
 })
 
+// Função para ocultar os itens do corpo do site e mostrar o menu hamburger
 $('.filter-light-gray').on('click', function(e){
-    if(($('.dropdown-menu').hasClass('ativo'))){
+    if(($('.dropdown-menu').hasClass('ativo'))){ // verifica se o menu dropdown ja esta com a classe ativo, remove a classe e retorna os itens do corpo do site
         $('.dropdown-menu').removeClass('ativo').fadeIn(100)
         $('.dropdown-menu').fadeOut(150)
         $('.nav-container').css('background', '')
@@ -36,13 +39,5 @@ $('.filter-light-gray').on('click', function(e){
             $('.footer').css('display', 'none')
         }
 })
-// $('.dropdown').on('click', ()=>{
-//     if($('.dropdown-menu').hasClass('ativo')){
-//     $('.dropdown-menu').fadeOut(150)
-//     $('.nav-container').css('background', '')
-//     $('.middle-banners').css('display', 'flex')
-//     $('.highlights').css('display', 'flex')
-//     }
-// })
 
 }
