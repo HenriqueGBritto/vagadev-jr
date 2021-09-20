@@ -12,7 +12,7 @@ Há duas formas de acessar o site e visualizar o teste.
   Passo 3: Abre o seu projeto, e no seu index.html, pressione CTRL + L e CTRL + O ou clique com o botão direito do mouse no index.html e clica em "Open with Live Server" ou "Abrir com Live server" <br><br>
   Passo 4: O site irá abrir automaticamente no seu navegador padrão. <br><br>
   
-2 - Abre o link abaixo e acesse o site: <br><br>
+2 - Abra o link abaixo e acesse o site: <br><br>
 
   Passo 1: https://n1-rush-newapp.netlify.app/.
   
